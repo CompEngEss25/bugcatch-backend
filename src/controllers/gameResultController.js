@@ -1,5 +1,6 @@
 import GameResult from "../models/gameResultModel.js";
 
+
 export const createGameResult = async (req, res) => {
     try {
         // Just for debugging purpose
@@ -24,12 +25,5 @@ export const createGameResult = async (req, res) => {
     }
 };
 
-export const getPlayerBestById = async (req, res) => {
-    // FILL CODE
 
-};
 
-export const getTop20 = async (req, res) => {
-    // FILL CODE
-
-};

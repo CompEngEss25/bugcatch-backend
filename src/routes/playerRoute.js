@@ -5,6 +5,9 @@ import * as playerController from "../controllers/playerController.js";
 const router = express.Router();
 
 router.post("/create", playerController.createPlayer);
-router.post("/", playerController.getPlayerById);
+router.post("/", playerController.getPlayerByName);
+router.post("/sethigh", playerController.setNewHigh);
+router.get("/leaderboard", playerController.getTopPlayers);
+
 
 export default router;

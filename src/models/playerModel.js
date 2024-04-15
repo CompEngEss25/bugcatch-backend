@@ -13,6 +13,11 @@ const playerSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    highestScore: {
+      type: Number,
+      required: true,
+  },
+
   });
   
   const Player = mongoose.model("Player", playerSchema);
