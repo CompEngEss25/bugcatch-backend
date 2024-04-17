@@ -25,6 +25,35 @@ export const createPlayer = async (req, res) => {
     }
 };
 
+export const setNewAvatar = async (req, res) => {
+  try {
+   Player.findOneAndUpdate(
+    { name: req.body.name },
+    { $set: { avatarId: req.body.avatarId } },
+    { returnOriginal: false }
+    ).then(updatedPlayer => {
+        console.log("Player avatar updated successfully:", updatedPlayer);
+    })
+    .catch(error => {
+        console.error("Error updating player:", error);
+    });
+
+      // Return success message response
+      res.status(200).json({ message: "Success" });
+  }
+
+  catch (err){
+      console.log(err);
+      // Error handlers
+      if (err.name === "ValidationError") {
+          res.status(400).json({ error: "Bad Request" });
+        } else {
+          res.status(500).json({ error: "Internal server error" });
+        }
+  }
+};
+
+
 
 export const setNewHigh = async (req, res) => {
   try {

@@ -15,7 +15,7 @@ async function test2(){
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({name: "Tontoey"}),
+        body: JSON.stringify({name: "ananannana"}),
       }).then(r => (r.json()));
       console.log(results);
 }
@@ -47,8 +47,20 @@ async function test5(){
   console.log(result);
 }
 
-test1();
+async function test6(){
+  const result = await fetch(`http://127.0.0.1:3222/players/setavatar`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({name: "Tontoey", avatarId: 10}),
+  });
+  console.log(result);
+}
+
+// test1();
 test2();
-test3();
-test4();
-test5();
+// test3();
+// test4();
+// test5();
+// test6();
